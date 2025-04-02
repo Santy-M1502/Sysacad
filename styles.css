@@ -5,7 +5,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url(../images/quichiano.jpg);
 }
 
 h1{
@@ -99,4 +98,14 @@ button{
     font-weight: 500;
     cursor: pointer;
     margin-top: 2em;
+}
+
+.funciones{
+    width: 100%;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.olvido{
+    text-align: center;
 }
