@@ -16,6 +16,7 @@ h1{
 
 .logoUTN{
     height: 3em;
+    color: black;
     width: auto;
     margin:0 10px;
     mix-blend-mode: multiply;  /*quitarle el fondo a imagen  */
