@@ -5,6 +5,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color:#343434;
+    background-image: url(Img/Background.png);
 }
 
 h1{
@@ -26,7 +28,7 @@ h1{
     display: flex;
     margin-top: 1em;
     padding: 1em 0;
-    background-color: #2f2f2f50;
+    background-color: #bfbfbf;
 }
 
 .UTN, .FRA{
@@ -49,37 +51,34 @@ footer{
     align-items: center;
 }
 
-.login-container label, .login-container input{
-    text-align: center;
-}
+
 
 .login-container label{
-    margin: 1.4em 0 0 0;
+    margin: 1.3em 12.9em 0 0;
     font-size: 1.2em;
     font-weight: 500;
 }
 
 .login-container input{
-    width: 100%;
     height: 2em;
     border-radius: 5px;
     border: 1px solid #204060;
-    background-color: #2f2f2f50;
+    background-color: #bfbfbf;
     color: #204060;
     font-size: 1em;
 }
 
 .login-container{
-    width: 50dvw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 1em;
+    width: 20em;
 }
 
 .main-container h2, .info-container h2{
     width: 100dvw;
-    background-color: #2f2f2f50;
+    background: linear-gradient(#afafff, transparent);
     font-size: 1.6em;
     font-weight: 500;
     text-align: center;
@@ -93,7 +92,7 @@ button{
     border-radius: 5px;
     border: none;
     background-color: #204060;
-    color: white;
+    color: #DBDBDB;
     font-size: 1.2em;
     font-weight: 500;
     cursor: pointer;
@@ -104,8 +103,53 @@ button{
     width: 100%;
     font-style: italic;
     text-decoration: underline;
+    font-size: 1.2em;
 }
 
 .olvido{
     text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+
+    .login-form-container{
+        display: flex;
+        align-items: star;
+        
+    }
+    .main-container h2, .info-container h2{
+        margin: 0 1em 0em 1em;
+        width: 35dvw;
+        padding-left: .1em;
+    }
+
+    li{
+        font-size: 1.1em;
+        margin-left: 25px;
+    }
+    
+    .main-container , .info-container {
+        align-items: center;
+        margin: 0 3em;
+    }
+
+    button:hover{ /*hover: cuando el cursor esta delante del botton hace lo de abajo  */
+        background-color: #bfbfbf;
+        width: 16.7em;
+        height: 3.5em;
+        color: #204060;
+    }
+
+    button:active{/*active: cuando le doy click al botton hace lo de abajo  */
+        background-color: #204090;
+        color: whitesmoke;
+    }
+
+    .button-container{
+        align-items: center;
+    }
+    
+
+
+    
 }
