@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+</head>
+<body>
+    <div>
+        <h1>Perfil de Usuario</h1>
+        <p id="info-usuario">Nombre</p>
+        <p id="mensaje">Mensaje</p>
+    </div>
+    <script>
+        fetch('http://localhost:3000/api/usuario-logueado', {
+          credentials: 'include'
+        })
+        .then(res => {
+          if (!res.ok) throw new Error('Token inválido');
+          return res.json();
+        })
+        .then(data => {
+          document.getElementById('info-usuario').textContent = `Nombre: ${data.nombre}, Email: ${data.email}`;
+        })
+        .catch(() => {
+          alert('Sesión expirada');
+          window.location.href = 'index.html';
+        });
+      
+        function cerrarSesion() {
+          fetch('http://localhost:3000/api/logout', {
+            method: 'POST',
+            credentials: 'include'
+          }).then(() => window.location.href = 'index.html');
+        }
+      </script>
+      <button onclick="cerrarSesion()">Cerrar sesión</button>
+      <script>
+      function cerrarSesion() {
+        localStorage.removeItem('token');
+        window.location.href = 'index.html';
+      }
+      </script>
+</body>
+</html>

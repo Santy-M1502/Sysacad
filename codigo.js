@@ -11,12 +11,19 @@ document.querySelector('.main-container').addEventListener('submit', async funct
                 body: JSON.stringify({ legajo, contrasena })
             });
     
-            if (!response.ok) { // si la respuesta es que no llego la informacion del legajo y contrasema
+            if (!response.ok) { // si la respuesta es que no llego la informacion del legajo y contrasena
                 throw new Error('Error en la respuesta del servidor');
             }
     
             const data = await response.json();
             document.getElementById('mensaje').textContent = data.mensaje; // Muestra el mensaje
+
+            if (data.mensaje === 'Login exitoso') {
+                window.location.href = 'perfil.html';
+            } else {
+                document.getElementById('mensaje').textContent = data.mensaje;
+            }
+            
         }
          catch (error) {
             console.log(error)
